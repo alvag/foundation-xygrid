@@ -1,0 +1,32 @@
+.grid-x {
+	background-color: coral;
+}
+
+.cell {
+	background-color: cornflowerblue;
+}
+
+// Semantico
+
+.contenido {
+	@include xy-grid-container();
+
+	.principal {
+		@include xy-grid();
+
+		.nosotros {
+			@include xy-cell();
+			@include breakpoint(medium) {
+				@include xy-cell(8);
+			}
+		}
+
+		aside {
+			@include breakpoint(medium) {
+				@include xy-cell(4);
+			}
+		}
+
+	}
+
+}
